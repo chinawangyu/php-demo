@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset='utf-8'/>
 	<title></title>
 </head>
 <body>
+	<!--     
+			iframe无刷新上传文件
+			<form enctype="multipart/form-data" method="POST" target="upload" action="http://localhost/class.upload.php" >
+			<input type="file" name="uploadfile" />
+			<input type="submit" />
+			</form>
+			<iframe name="upload" style="display:none"></iframe> 
 
-	<progress value="250" max="500">111</progress>
+	 -->
+
+	 <!-- 真正的ajax上传文件 -->
+	<form id="uploadForm">
+			<input type="file" id="file"/> 
+			<input type="button" value="上传" id="sub"/>
+	</form>
+
+ 
+		<progress id="progressBar" value="0" max="100"> </progress> 
+
+		<script type="text/javascript" src='./js/jquery.js'></script>
+		<script type="text/javascript">
+				
+				/*显示进度条*/
+				function progressFunction(evt) {
+		            var progressBar = document.getElementById("progressBar");
+		            if (evt.lengthComputable) {
+		                progressBar.max = evt.total;      
+		                progressBar.value = evt.loaded;
+		            }
+				}
+
+				$(function(){
+					
+					$("#sub").click(function(){
+						// 找到文件对象
+						var fileObj = document.getElementById('file').files[0];
+
+						/* 创建一个对象，可以上传二进制文件(新接口)  再添加post['author']=hooyes */
+					 	var form = new FormData();
+			            form.append("author", "hooyes");
+			            form.append("file", fileObj);
+ 						
+
+			             var xhr = new XMLHttpRequest();
+			             xhr.open("post", 'http://www.shijiang.com/index.php/Index/getInfo', true);
+
+			             xhr.onreadystatechange=function(){
+							  if (this.readyState==4 && this.status==200){
+							  	  console.log(this.responseText);
+							  }
+						 }
+						
+						/*进度条--调用progressFunction方法*/
+						xhr.upload.addEventListener("progress", progressFunction, false)
+
+
+						xhr.send(form);
+
+				 	});
+
+				});
+		</script>
 
 </body>
 </html>
