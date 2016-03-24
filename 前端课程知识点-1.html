@@ -1,0 +1,134 @@
+<!-- 布局类：
+
+1.  position (static、relative 、absoult、fixed)
+
+	 absolute 	
+		生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
+		元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。
+
+	fixed 	
+		生成绝对定位的元素，相对于浏览器窗口进行定位。
+		元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。
+
+	relative 	
+		生成相对定位的元素，相对于其正常位置进行定位。
+		因此，"left:20" 会向元素的 LEFT 位置添加 20 像素。
+
+	static 	
+		默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
+	
+	inherit 	
+		规定应该从父元素继承 position 属性的值(不常用)。
+
+
+
+2. float (none(默认的)、left、right)
+	left 	元素向左浮动。
+	right 	元素向右浮动。
+	none 	默认值。元素不浮动，并会显示在其在文本中出现的位置。
+	inherit 	规定应该从父元素继承 float 属性的值。
+
+	备注：任何元素都可以浮动。浮动元素会自动生成一个块级框,而不论它本身是何种元素。 
+		  clear:both;  可以清除浮动。
+	       
+
+3. 块元素(block element)   
+	　　* address - 地址   
+	　　* blockquote - 块引用   
+	　　* center - 举中对齐块   
+	　　* dir - 目录列表   
+	　　* div - 常用块级容易，也是css layout的主要标签   
+	　　* dl - 定义列表   
+	　　* fieldset - form控制组   
+	　　* form - 交互表单   
+	　　* h1 - 大标题   
+	　　* h2 - 副标题   
+	　　* h3 - 3级标题   
+	　　* h4 - 4级标题   
+	　　* h5 - 5级标题   
+	　　* h6 - 6级标题   
+	　　* hr - 水平分隔线   
+	　　* isindex - input prompt   
+	　　* menu - 菜单列表   
+	　　* noframes - frames可选内容，（对于不支持frame的浏览器显示此区块内容   
+	　　* noscript - 可选脚本内容（对于不支持script的浏览器显示此内容）   
+	　　* ol - 排序表单   
+	　　* p - 段落   
+	　　* pre - 格式化文本   
+	　　* table - 表格   
+	　　* ul - 非排序列表 
+
+	内联元素(inline element)     
+	　　* a - 锚点   
+	　　* abbr - 缩写   
+	　　* acronym - 首字   
+	　　* b - 粗体(不推荐)   
+	　　* bdo - bidi override   
+	　　* big - 大字体   
+	　　* br - 换行   
+	　　* cite - 引用   
+	　　* code - 计算机代码(在引用源码的时候需要)   
+	　　* dfn - 定义字段   
+	　　* em - 强调   
+	　　* font - 字体设定(不推荐)   
+	　　* i - 斜体   
+	　　* img - 图片   
+	　　* input - 输入框   
+	　　* kbd - 定义键盘文本   
+	　　* label - 表格标签   
+	　　* q - 短引用   
+	　　* s - 中划线(不推荐)   
+	　　* samp - 定义范例计算机代码   
+	　　* select - 项目选择   
+	　　* small - 小字体文本   
+	　　* span - 常用内联容器，定义文本内区块   
+	　　* strike - 中划线   
+	　　* strong - 粗体强调   
+	　　* sub - 下标   
+	　　* sup - 上标   
+	　　* textarea - 多行文本输入框   
+	　　* tt - 电传文本   
+	　　* u - 下划线   
+	　　* var - 定义变量   
+	 
+	备注： 	
+	替换元素一般有内在尺寸，所以具有width和height，可以设定。例如你不指定img的width和height时，就按其内在尺寸显示，也就是图片被保存的时候的宽度和高度。
+	对于表单元素，浏览器也有默认的样式，包括宽度和高度。
+	所以像img,input这些行内元素是可以设置宽度和高度的。
+										--摘自csdn博客http://blog.csdn.net/jlds123/article/details/8647448
+
+	
+
+	4. background详解：
+
+	   background-size:100% 100%;  完全填充到这个盒子，不考虑图片是否合理缩放
+	   background-size:50% 100%;   宽度缩小一半，高度不变
+	   background-size:cover;      不缩放图片显示，不考虑图片是否显示完整
+	   background-size:contain;    按比例对图片进行缩放。
+	   
+	   background-position:50%;  相当于 background-position:center; 或 background-position:50% 50%;
+	   background-position:-960px -320px;   图片的顶点坐标是(0,0),这相当于向右960px,向下320px
+	   background-repeat 	规定如何重复背景图像。
+
+	   1.默认的颜色  2图片的地址 3不重复 4position left  5position top
+	   background:red url(http://img.mukewang.com/56e658ee0001931d20000600.jpg) no-repeat -960px -320px;
+
+	   js控制这个position位置:  Object.style.backgroundPosition=position	   	
+	   JavaScript 统一语法： 	object.style.background="white url(paper.gif) repeat-y"
+ -->
+
+<meta charset='utf-8'/>
+<style type="text/css">
+	
+	div{
+		overflow:auto;	
+		width:200px;height:200px;
+		background:red url(http://img.mukewang.com/56e658ee0001931d20000600.jpg) no-repeat -960px -320px;
+		/*background-position:-960px -320px;*/ 
+		/*background-position:50% 80%;*/
+	}	 
+	 
+</style>
+	
+<div></div>
+ 
