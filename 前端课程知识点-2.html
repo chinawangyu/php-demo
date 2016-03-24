@@ -1,0 +1,82 @@
+<!-- 
+
+	table表格	
+		table{width:500px; border-collapse:collapse;}
+		tr{height:40px;}
+		table tr td{border:1px solid red;}
+		
+		border-collapse:collapse; 合并边框（table设置）
+		border:1px solid red;  设置边框 - dashed是设置的虚线
+		
+
+
+	ul li 
+		list-tyle-type: disc | circle | square | decimal | decimal-leading-zero | 
+						lower-roman | upper-roman | lower-greek | lower-latin | upper-latin | 
+						armenian | georgian | none | inherit   前面的标识
+		list-style-position	 inside outside(默认)  标识是在外面还是在文本里面
+		
+		list-style-image:url("https://ss0.bdstatic.com/k4oZeXSm1A5BphGlnYG/icon/weather/aladdin/png_18/a0.png");  标识换成图片
+	
+		
+
+
+	选择器:	
+		#oj:before{ content:attr(id);background:red;display:block;width:100px;height:100px; }
+		  	在id=oj元素之前插入id的值  after是在之后
+		
+		#oj>[id]{color:red;}  选择父元素id=oj的下面所有带id的子元素(不包含孙子元素)
+			
+		[data-n=od]{color:red;}  data-n=od的元素
+
+		tr:nth-of-type(2n){background:red;}
+		tr:nth-child(2n){background:red;}     tr隔行换色  第二种不建议使用
+		tr:nth-last-of-type(2n){background:red;} tr从下往上进行隔行换色
+			
+		tr:first-child{background:red;} 选中第一个tr	
+		tr:last-child{background:red;} 选中最后一个tr
+
+		td:empty{background:red;}	 如果是空的，就给背景颜色为红色
+
+		p:first-letter 	 	选择每个 <p> 元素的首字母。
+		p:first-line
+	
+
+ -->
+<style type="text/css">
+ 	table{width:500px; border-collapse:collapse;}
+	tr{height:40px;}
+	table tr td{border:1px solid green;}
+
+</style>
+
+<meta charset='utf-8'/>
+	
+<marquee>222</marquee><!-- 滚动 -->
+
+ <table>
+	<tr>
+		<td>1</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+ </table>
