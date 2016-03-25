@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<title></title>
+	<style type="text/css">
+		#animate-area {
+			width:900px;height:500px;background:#ccc;margin:0 auto;
+
+	        background-image: url(http://img1.gtimg.com/15/1555/155537/15553754_small.jpg), url(http://img.mukewang.com/56e658ee0001931d20000600.jpg);	
+	        background-position: 100px 100px, -690px -100px;
+	        background-repeat: no-repeat, no-repeat, repeat-x;
+
+	         animation: animatedBird 10s linear infinite;
+	         /*逆向循环动画*/
+	         animation-direction:alternate;
+ 		}
+
+
+ 		@keyframes animatedBird {	
+	        from {   }
+	        to { background-position: 300px -90px, 30px 20px; }
+ 		}
+
+	</style>
+</head>
+<body>
+
+	<div id="animate-area">
+			
+		<h1>蓝色的天空，我的家，dacaoyuan...我的亲人。</h1>
+		<h1>蓝色的天空，我的家，dacaoyuan...我的亲人。</h1>
+		<h1>蓝色的天空，我的家，dacaoyuan...我的亲人。</h1>
+		<h1>蓝色的天空，我的家，dacaoyuan...我的亲人。</h1>
+		<h1>蓝色的天空，我的家，dacaoyuan...我的亲人。</h1>
+		 
+	</div>
+
+
+	<script type="text/javascript">
+
+
+			/*判断鼠标是左移还是右移活上移下移*/	
+	 	/*	var x, y, xold, yold, xdiff, ydiff;
+			var dir = Array();
+			dir[0] = "top";
+			dir[1]="topRight";
+			dir[2]="right";
+			dir[3]="bottomRight";
+			dir[4] = "bottom";
+			dir[5]="bottomLeft";
+			dir[6]="left";
+			dir[7]="topLeft";
+			document.getElementById('animate-area').onmousemove = FindXY;
+			function display(direction) {
+				document.body.style.cursor = dir[direction];
+
+				console.log(dir[direction]);
+			}
+			function FindXY(loc) {
+				var event = loc||event;
+				x = (document.layers) ? loc.pageX : event.clientX;
+				y = (document.layers) ? loc.pageY : event.clientY;
+				xdiff = x - xold;
+				ydiff = y - yold
+				if ((xdiff <  6) && (ydiff < -6)) display(0);
+				if ((xdiff <  6) && (ydiff >  6)) display(4);
+				if ((xdiff >  6) && (ydiff <  6)) display(2);
+				if ((xdiff < -6) && (ydiff <  6)) display(6);
+				if ((xdiff >  6) && (ydiff >  6)) display(3);
+				if ((xdiff >  6) && (ydiff < -6)) display(1);
+				if ((xdiff < -6) && (ydiff >  6)) display(5);
+				if ((xdiff < -6) && (ydiff < -6)) display(7);
+				xold = x;
+				yold = y;
+			}*/
+
+	</script>
+
+</body>
+</html>
