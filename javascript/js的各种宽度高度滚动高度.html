@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#a{border:5px solid red;height:30px;padding:5px;overflow:scroll;}
+	</style>
+</head>
+<body style="height:1600px">
+
+	<div id="a">
+		<input type="submit" value="click"/>
+		sdffffffffff<br/>
+		sdffffffffff<br/>sdffffffffff<br/>sdffffffffff<br/>sdffffffffff<br/>sdffffffffff<br/> 
+	</divb>
+
+	<script type="text/javascript">
+		window.onload = function(){
+		 	
+		 	
+		 	document.onclick = function(){
+		 		//document.body.scrollTop||document.documentElement.scrollTop;  //兼容谷歌和火狐IE-页面被卷去的高度
+		 		// document.body.clientHeight   //网页可见的区域的高度--- document.documentELement.clientHeight (FF、IE的写法)
+
+		 		//document.getElementById('a').offsetTop; //此元素距离顶部的距离
+		 		//document.getElementById('a').offsetHeight; //div的 offset 是指 盒子的高度 + border的高度 + padding值
+		 		//document.getElementById('a').clientHeight; //可见区域的高度
+		 		// document.getElementById('a').scrollTop;  //被卷去的高度
+		 		//document.getElementById('a').scrollHeight; //总的高度(加上超出的高度，哪怕是overflow:hidden)
+
+		 		 //document.getElementById('a').style.height; //只有动态设置才能动态获取
+		 		
+		 	}
+
+
+			/*找到a下面的input,点击后进行跳转*/
+			var obj = document.getElementById('a').getElementsByTagName('input')[0];
+			obj.onclick = function(){
+				 window.location= "file:///C:/Users/Administrator/Desktop/index.html?a=22"
+			}
+
+
+		}
+	</script>
+
+
+</body>
+</html>
